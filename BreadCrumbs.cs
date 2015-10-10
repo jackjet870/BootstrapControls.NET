@@ -31,7 +31,7 @@ namespace BootstrapControls
                     {
                         list.Add(new BreadCrumbItem { PageUrl = k.pageUrl, PageIco = k.pageIco, PageName = k.pageLabel });
                     }
-                    else
+                    else if (k.subpages != null)
                     {
                         foreach (var h in k.subpages)
                         {
@@ -40,7 +40,7 @@ namespace BootstrapControls
                                 list.Add(new BreadCrumbItem { PageUrl = k.pageUrl, PageIco = k.pageIco, PageName = k.pageLabel });
                                 list.Add(new BreadCrumbItem { PageUrl = h.pageUrl, PageIco = h.pageIco, PageName = h.pageLabel });
                             }
-                            else
+                            else if (h.subpages != null)
                             {
                                 foreach (var t in h.subpages)
                                 {
@@ -50,7 +50,7 @@ namespace BootstrapControls
                                         list.Add(new BreadCrumbItem { PageUrl = h.pageUrl, PageIco = h.pageIco, PageName = h.pageLabel });
                                         list.Add(new BreadCrumbItem { PageUrl = t.pageUrl, PageIco = t.pageIco, PageName = t.pageLabel });
                                     }
-                                    else
+                                    else if (t.subpages != null)
                                     {
                                         foreach (var tt in t.subpages)
                                         {
