@@ -55,6 +55,7 @@
     <Compile Include="Button.cs" />
     <Compile Include="CheckBox.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="LinkButton.cs" />
     <Compile Include="NotifyPanel.cs" />
     <Compile Include="Pagination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

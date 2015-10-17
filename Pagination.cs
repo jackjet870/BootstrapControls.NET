@@ -13,9 +13,9 @@ namespace BootstrapControls
     [ToolboxData("<{0}:Pagination runat=server></{0}:Pagination>")]
     public class Pagination : WebControl
     {
-        protected LinkButton aPrev = new LinkButton();
-        protected LinkButton aNext = new LinkButton();
-        protected List<LinkButton> aPage = new List<LinkButton>();
+        protected System.Web.UI.WebControls.LinkButton aPrev = new System.Web.UI.WebControls.LinkButton();
+        protected System.Web.UI.WebControls.LinkButton aNext = new System.Web.UI.WebControls.LinkButton();
+        protected List<System.Web.UI.WebControls.LinkButton> aPage = new List<System.Web.UI.WebControls.LinkButton>();
 
         public int RecordsPerQuery
         {
@@ -172,7 +172,7 @@ namespace BootstrapControls
             foreach (var item in Items)
             {
 
-                var lb = new LinkButton();
+                var lb = new System.Web.UI.WebControls.LinkButton();
                 lb.ID = this.ID + "_pages_" + item.Iteration;
                 lb.Command += lbPage_Command;
                 lb.CommandArgument = item.Iteration.ToString();
@@ -265,7 +265,7 @@ namespace BootstrapControls
 
         protected void lbPage_Command(object sender, CommandEventArgs e)
         {
-            PageNumber = int.Parse(((LinkButton)sender).CommandArgument);
+            PageNumber = int.Parse(((System.Web.UI.WebControls.LinkButton)sender).CommandArgument);
             this.RecordsOffset = (PageNumber - 1) * this.RecordsPerQuery;
             LoadData(this);
             CalculatePagination();

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -11,10 +10,9 @@ using System.Web.UI.WebControls;
 namespace BootstrapControls
 {
     [DefaultProperty("Text")]
-    [ToolboxData("<{0}:Button runat=server></{0}:Button>")]
-    public class Button : System.Web.UI.WebControls.Button
+    [ToolboxData("<{0}:LinkButton runat=server></{0}:LinkButton>")]
+    public class LinkButton : System.Web.UI.WebControls.LinkButton
     {
-
         public ButtonColorType Color
         {
             set
@@ -71,6 +69,11 @@ namespace BootstrapControls
             }
         }
 
+        protected override void OnInit(EventArgs e)
+        {
+            base.CssClass += " btn";
+        }
+
         public bool Circle
         {
             set
@@ -81,12 +84,6 @@ namespace BootstrapControls
                 }
             }
         }
-
-        protected override void OnInit(EventArgs e)
-        {
-            base.CssClass += " btn";
-        }
-
 
         protected override void Render(HtmlTextWriter w)
         {

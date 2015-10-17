@@ -22,6 +22,7 @@ namespace BootstrapControls
 
     public enum ButtonSizeType
     {
+        XtraLarge,
         Large,
         Small,
         Mini
