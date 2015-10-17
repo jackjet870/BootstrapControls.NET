@@ -10,7 +10,7 @@ The easiest way to add our controls to your project is to download the whole rep
 2. Unpack it to your solution folder
 3. Add BootstrapControls.NET project to your solution by right-clicking on your solution -> Add -> Existing Project...![third_step.jpg](http://maple.com.pl/tutorial_bscontrols/third_step.jpg)
 4. Add library reference in your Web Application project by right-clicking on References -> Add Reference... -> Projects -> BootstrapControls![fourth_step.jpg](http://maple.com.pl/tutorial_bscontrols/fourth_step.jpg)
-5. Register controls with desired prefix. Insert following code into <system.web> node to register controls under "bs" prefix.
+5. Register controls with desired prefix. Insert following code into `<system.web>` node to register controls under "bs" prefix.
 ```xml
 <pages>
   <controls>
@@ -21,4 +21,6 @@ The easiest way to add our controls to your project is to download the whole rep
 
 # Usage
 
-To render control just start typing <your_prefix: ... , intellisense will show you available controls.
+To render control just start typing `<your_prefix: ...` , intellisense will show you available controls.
+
+![qmK2lLhoYr.gif](http://maple.com.pl/tutorial_bscontrols/qmK2lLhoYr.gif)
