@@ -78,7 +78,7 @@ namespace BootstrapControls
         {
             var viewstateVal = Context.Request[base.GroupName];
 
-            if(Value == viewstateVal)
+            if(Value == viewstateVal && (!string.IsNullOrWhiteSpace(Value) && !string.IsNullOrWhiteSpace(viewstateVal)))
             {
                 Checked = true;
             }
