@@ -43,7 +43,17 @@ namespace BootstrapControls
 
         public string Value
         {
-            get; set;
+            get
+            {
+                if (ViewState["Value_" + this.ID] != null)
+                    return ViewState["Value_" + this.ID].ToString();
+                else
+                    return string.Empty;
+            }
+            set
+            {
+                ViewState["Value_" + this.ID] = value;
+            }
         }
 
         public string GroupValue
