@@ -82,15 +82,26 @@ namespace BootstrapControls
             }
         }
 
+        //public override void RenderBeginTag(HtmlTextWriter w)
+        //{
+        //    w.Write(String.Format(@"<div class=""form-control"">"));
+        //}
+
+        //public override void RenderEndTag(HtmlTextWriter w)
+        //{
+        //    w.Write("</div>");
+        //}
+
         protected override void OnInit(EventArgs e)
         {
             base.CssClass += " btn";
         }
 
-
         protected override void Render(HtmlTextWriter w)
         {
+            w.Write(String.Format(@"<div class=""form-group"">"));
             base.Render(w);
+            w.Write("</div>");
         }
     }
 }
