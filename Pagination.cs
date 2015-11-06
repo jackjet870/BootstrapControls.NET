@@ -295,7 +295,8 @@ namespace BootstrapControls
 
         protected override void RenderContents(HtmlTextWriter w)
         {
-            
+            ButtonGenerator();
+
             var x = aPrev.UniqueID;
 
             
