@@ -150,10 +150,16 @@ namespace BootstrapControls
         public delegate void MyHandler(Pagination pagination);
         public event MyHandler LoadData;
 
-        public void InitPagination()
+        private void InitPagination()
         {
-            LoadData(this);
-            CalculatePagination();
+            OnLoadData(this);
+        }
+
+        public void ResetPagination()
+        {
+            this.RecordsOffset = 0;
+            this.PageNumber = 1;
+            OnLoadData(this);
         }
 
         protected void OnLoadData(Pagination pagination)
@@ -161,6 +167,8 @@ namespace BootstrapControls
             if (LoadData != null)
             {
                 LoadData(this);
+                CalculatePagination();
+                ButtonGenerator();
             }
         }
 
@@ -248,9 +256,8 @@ namespace BootstrapControls
             this.RecordsOffset += this.RecordsPerQuery;
             this.PageNumber += 1;
 
-            LoadData(this);
-            CalculatePagination();
-            ButtonGenerator();
+            OnLoadData(this);
+            
         }
         //private event EventHandler PrevHandler;
         void OnPrevHandler(object sender, EventArgs e)
@@ -258,23 +265,24 @@ namespace BootstrapControls
             this.RecordsOffset -= this.RecordsPerQuery;
             this.PageNumber -= 1;
 
-            LoadData(this);
-            CalculatePagination();
-            ButtonGenerator();
+            OnLoadData(this);
+
         }
 
         protected void lbPage_Command(object sender, CommandEventArgs e)
         {
             PageNumber = int.Parse(((System.Web.UI.WebControls.LinkButton)sender).CommandArgument);
             this.RecordsOffset = (PageNumber - 1) * this.RecordsPerQuery;
-            LoadData(this);
-            CalculatePagination();
-            ButtonGenerator();
+            OnLoadData(this);
 
         }
 
         protected override void OnLoad(EventArgs e)
         {
+            if(!Page.IsPostBack)
+            {
+                InitPagination();
+            }
             ButtonGenerator();
         }
 
@@ -295,7 +303,7 @@ namespace BootstrapControls
 
         protected override void RenderContents(HtmlTextWriter w)
         {
-            ButtonGenerator();
+            //ButtonGenerator();
 
             var x = aPrev.UniqueID;
 
