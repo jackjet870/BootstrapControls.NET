@@ -27,7 +27,7 @@ namespace BootstrapControls
 
                 foreach (var k in x.pages)
                 {
-                    if (Page.ResolveUrl(k.pageUrl.ToString()).Contains(HttpContext.Current.Request.FilePath))
+                    if (Page.ResolveUrl(k.pageUrl.ToString()).Equals(HttpContext.Current.Request.FilePath))
                     {
                         list.Add(new BreadCrumbItem { PageUrl = k.pageUrl, PageIco = k.pageIco, PageName = k.pageLabel });
                     }
@@ -35,7 +35,7 @@ namespace BootstrapControls
                     {
                         foreach (var h in k.subpages)
                         {
-                            if (Page.ResolveUrl(h.pageUrl.ToString()).Contains(HttpContext.Current.Request.FilePath))
+                            if (Page.ResolveUrl(h.pageUrl.ToString()).Equals(HttpContext.Current.Request.FilePath))
                             {
                                 list.Add(new BreadCrumbItem { PageUrl = k.pageUrl, PageIco = k.pageIco, PageName = k.pageLabel });
                                 list.Add(new BreadCrumbItem { PageUrl = h.pageUrl, PageIco = h.pageIco, PageName = h.pageLabel });
@@ -44,7 +44,7 @@ namespace BootstrapControls
                             {
                                 foreach (var t in h.subpages)
                                 {
-                                    if (Page.ResolveUrl(t.pageUrl.ToString()).Contains(HttpContext.Current.Request.FilePath))
+                                    if (Page.ResolveUrl(t.pageUrl.ToString()).Equals(HttpContext.Current.Request.FilePath))
                                     {
                                         list.Add(new BreadCrumbItem { PageUrl = k.pageUrl, PageIco = k.pageIco, PageName = k.pageLabel });
                                         list.Add(new BreadCrumbItem { PageUrl = h.pageUrl, PageIco = h.pageIco, PageName = h.pageLabel });
@@ -54,7 +54,7 @@ namespace BootstrapControls
                                     {
                                         foreach (var tt in t.subpages)
                                         {
-                                            if (Page.ResolveUrl(tt.pageUrl.ToString()).Contains(HttpContext.Current.Request.FilePath))
+                                            if (Page.ResolveUrl(tt.pageUrl.ToString()).Equals(HttpContext.Current.Request.FilePath))
                                             {
                                                 list.Add(new BreadCrumbItem { PageUrl = k.pageUrl, PageIco = k.pageIco, PageName = k.pageLabel });
                                                 list.Add(new BreadCrumbItem { PageUrl = h.pageUrl, PageIco = h.pageIco, PageName = h.pageLabel });
