@@ -82,6 +82,19 @@ namespace BootstrapControls
             }
         }
 
+        public override string CssClass
+        {
+            get
+            {
+                return base.CssClass;
+            }
+
+            set
+            {
+                base.CssClass += " " + value;
+            }
+        }
+
         //public override void RenderBeginTag(HtmlTextWriter w)
         //{
         //    w.Write(String.Format(@"<div class=""form-control"">"));
