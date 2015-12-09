@@ -14,7 +14,20 @@ namespace BootstrapControls
     public class TextBox : System.Web.UI.WebControls.TextBox
     {
         
-        public string Name { get; set; }
+        public string Name
+        {
+            get
+            {
+                if (ViewState["TextboxName_" + this.ID] != null)
+                    return ViewState["TextboxName_" + this.ID].ToString();
+                else
+                    return string.Empty;
+            }
+            set
+            {
+                ViewState["TextboxName_" + this.ID] = value;
+            }
+        }
         public string Message { get; set; }
 
         private string _Size { get; set; }

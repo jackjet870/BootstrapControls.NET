@@ -15,7 +15,17 @@ namespace BootstrapControls
     {
         public string Label
         {
-            get; set;
+            get
+            {
+                if (ViewState["Label_" + ID] != null)
+                    return ViewState["Label_" + ID].ToString();
+                else
+                    return string.Empty;
+            }
+            set
+            {
+                ViewState["Label_" + ID] = value;
+            }
         }
 
         public override string Text
