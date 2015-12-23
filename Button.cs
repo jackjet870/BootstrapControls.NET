@@ -60,6 +60,11 @@ namespace BootstrapControls
             }
         }
 
+        public bool? FormGroup
+        {
+            get; set;
+        }
+
         public bool Outline
         {
             set
@@ -112,7 +117,7 @@ namespace BootstrapControls
 
         protected override void Render(HtmlTextWriter w)
         {
-            w.Write(String.Format(@"<div class=""form-group"">"));
+            w.Write(String.Format(@"<div class=""{0}"">", (FormGroup.HasValue) ? ((FormGroup.Value) ? "form-group" : "") : "form-group"));
             base.Render(w);
             w.Write("</div>");
         }

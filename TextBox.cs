@@ -67,14 +67,25 @@ namespace BootstrapControls
             }
         }
 
-        private bool _IcoSet
+
+        public bool? FormGroup
+        {
+            get; set;
+        }
+
+        public string Ico
         {
             get
             {
-                return (Ico == null) ? false : true;
+                return IcoLeft;
+            }
+            set
+            {
+                IcoLeft = value;
             }
         }
-        public string Ico
+
+        public string IcoLeft
         {
             get; set;
         }
@@ -89,21 +100,21 @@ namespace BootstrapControls
 
         protected override void Render(HtmlTextWriter w)
         {
-            w.Write(String.Format(@"<div class=""form-group {0} {1}"">", _Size, _State));
+            w.Write(String.Format(@"<div class=""{2} {0} {1}"">", _Size, _State, (FormGroup.HasValue) ? ((FormGroup.Value) ? "form-group" : "") : "form-group"));
 
             if(Name != null)
             w.Write(String.Format(@"<label class=""control-label"" for=""{0}"">{1}</label>", base.ClientID, this.Name));
 
-            if (Ico != null)
+            if (IcoLeft != null)
             {
                 w.Write(@"<div class=""input-group"">");
-                w.Write(String.Format(@"<div class=""input-group-addon"">{0}</div>", Ico));
+                w.Write(String.Format(@"<div class=""input-group-addon"">{0}</div>", IcoLeft));
             }
 
             base.CssClass += " form-control";
             base.Render(w);
 
-            if (Ico != null)
+            if (IcoLeft != null)
                 w.Write("</div>");
             if (Message != null)
             w.Write(String.Format(@"<p class=""help-block {0}"">{1}</p>", _MessageColor, Message ));

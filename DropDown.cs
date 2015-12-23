@@ -34,6 +34,11 @@ namespace BootstrapControls
             }
         }
 
+        public bool? FormGroup
+        {
+            get; set;
+        }
+
         private string _State { get; set; }
         private string _MessageColor { get; set; }
         public InputOption State
@@ -66,7 +71,7 @@ namespace BootstrapControls
 
         protected override void Render(HtmlTextWriter w)
         {
-            w.Write(String.Format(@"<div style=""{2}"" class=""form-group {0} {1}"">", _Size, _State, AdditionalStyle));
+            w.Write(String.Format(@"<div style=""{2}"" class=""{3} {0} {1}"">", _Size, _State, AdditionalStyle, (FormGroup.HasValue) ? ((FormGroup.Value) ? "form-group" : "") : "form-group"));
 
             if(Name != null)
             w.Write(String.Format(@"<label class=""control-label"" for=""{0}"">{1}</label>", base.ClientID, this.Name));
