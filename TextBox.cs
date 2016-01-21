@@ -102,7 +102,7 @@ namespace BootstrapControls
         {
             w.Write(String.Format(@"<div class=""{2} {0} {1}"">", _Size, _State, (FormGroup.HasValue) ? ((FormGroup.Value) ? "form-group" : "") : "form-group"));
 
-            if(Name != null)
+            if(!string.IsNullOrWhiteSpace(Name))
             w.Write(String.Format(@"<label class=""control-label"" for=""{0}"">{1}</label>", base.ClientID, this.Name));
 
             if (IcoLeft != null)
