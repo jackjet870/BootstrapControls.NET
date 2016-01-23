@@ -246,14 +246,9 @@ protected void pagination_LoadData(BootstrapControls.Pagination pagination)
 
 Methods:
 
-**InitPagination** - Needs to be called on the Page_Load. Must be called when there's no PostBack
+~~**InitPagination** - Needs to be called on the Page_Load. Must be called when there's no PostBack~~ No more needed ! It's being automatically called on Page Load.
 
-```
-if (!IsPostBack)
-{
-    pagination.InitPagination();
-}
-```
+**ResetPagination** - You have to call it after changing the dataset. It will regenerate pagination buttons and set pagination to the first page. Ex. if you have some search field which is a part of database/linq query you have to call ResetPagination() on every search event.
 
 Okay let me wrap everything up with this short tutorial
 
