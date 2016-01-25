@@ -155,10 +155,13 @@ namespace BootstrapControls
             OnLoadData(this);
         }
 
-        public void ResetPagination()
+        public void ResetPagination(int? pageNumber = null)
         {
             this.RecordsOffset = 0;
-            this.PageNumber = 1;
+            if (pageNumber == null)
+                this.PageNumber = 1;
+            else
+                this.PageNumber = pageNumber.Value;
             OnLoadData(this);
         }
 
