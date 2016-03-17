@@ -69,6 +69,19 @@ namespace BootstrapControls
             }
         }
 
+        public override string CssClass
+        {
+            get
+            {
+                return base.CssClass;
+            }
+
+            set
+            {
+                base.CssClass += " " + value;
+            }
+        }
+
         protected override void OnInit(EventArgs e)
         {
             base.CssClass += " btn";
