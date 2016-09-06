@@ -1,9 +1,0 @@
-<configuration>
-    <system.web>
-      <pages>
-        <controls>
-          <add tagPrefix="bs" assembly="BootstrapControls" namespace="BootstrapControls" />
-        </controls>
-      </pages>
-    </system.web>
-</configuration>
