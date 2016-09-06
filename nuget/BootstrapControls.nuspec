@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BootstrapControls.NET</id>
+    <version>1.0.0</version>
+    <title>BootstrapControls.NET</title>
+    <authors>p.niewiadomski</authors>
+    <owners>$author$</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Pakiet pomocnych kontrolek dla Twojego projektu WebForms</description>
+    <releaseNotes>Init</releaseNotes>
+    <copyright>Loyalty Point 2016</copyright>
+    <tags>bootstrap controls webforms helper</tags>
+  </metadata>
+</package>
