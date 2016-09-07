@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("BootstrapControls.NET")]
 [assembly: AssemblyDescription("A set of useful webforms controls for bootstrap")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Loyalty Point")]
+[assembly: AssemblyCompany("p.niewiadomski")]
 [assembly: AssemblyProduct("BootstrapControls.NET")]
 [assembly: AssemblyCopyright("Copyright © Paweł Niewiadomski 2016")]
 [assembly: AssemblyTrademark("")]
